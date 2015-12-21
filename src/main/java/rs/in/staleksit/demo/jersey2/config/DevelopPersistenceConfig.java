@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rs.in.staleksit.demo.jersey2.model;
+package rs.in.staleksit.demo.jersey2.config;
 
 import javax.sql.DataSource;
 
@@ -9,8 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-
-import rs.in.staleksit.demo.jersey2.config.AbstractPersistenceConfig;
 
 /**
  *
