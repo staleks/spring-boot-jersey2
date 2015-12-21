@@ -1,0 +1,9 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+liquibase:
+  change-log: classpath:liquibase-changeLog.xml
+  
+  

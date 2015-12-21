@@ -35,13 +35,19 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jersey')
     compile('org.springframework.boot:spring-boot-starter-validation')
     compile('org.springframework.boot:spring-boot-starter-web')
-	
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	
 	// Bean-to-bean mapper
 	compile 'org.jtransfo:jtransfo-spring:0.15'
 	
+	// Commons
+	compile 'org.apache.commons:commons-lang3:3.4'
+	
+	// liquibase
+	compile 'org.liquibase:liquibase-core:3.4.2'
+	
 	// DB
-    runtime('com.h2database:h2')
+	compile 'com.h2database:h2:1.4.190'
 	
 	// Testing
     testCompile('org.springframework.boot:spring-boot-starter-test') 

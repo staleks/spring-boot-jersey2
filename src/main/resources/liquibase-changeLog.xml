@@ -1,0 +1,85 @@
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+   http://www.liquibase.org/xml/ns/dbchangelog 
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+     
+    <changeSet id="20151212-1" author="staleks@gmail.com">
+    	<createTable tableName="tbl_manufacturer">
+    		<column name="id" type="int" autoIncrement="true" />
+    		<column name="name" type="varchar(80)" />
+    		<column name="active" type="boolean" />
+    	</createTable>
+    	
+    	<addPrimaryKey columnNames="id" tableName="tbl_manufacturer" constraintName="pk_manufacturer" />
+    	
+    	<addNotNullConstraint tableName="tbl_manufacturer" columnName="id" columnDataType="int" />
+    	<addNotNullConstraint tableName="tbl_manufacturer" columnName="name" columnDataType="varchar(80)" />
+    	
+    	<createIndex tableName="tbl_manufacturer" indexName="udx_manufacturer_name" unique="true">
+    		<column name="name" type="varchar(80)" />
+    	</createIndex>
+    </changeSet>
+
+    <changeSet id="20151212-2" author="staleks@gmail.com">
+    	<createTable tableName="tbl_phonemodel">
+    		<column name="id" type="int" autoIncrement="true"/>
+    		<column name="name" type="varchar(80)"  />
+    		<column name="active" type="boolean" />
+    		<column name="manufacturer_id" type="int" />
+    	</createTable>
+    	
+    	<addPrimaryKey columnNames="id" tableName="tbl_phonemodel" constraintName="pk_phonemodel" />
+
+    	<addNotNullConstraint tableName="tbl_phonemodel" columnName="id" columnDataType="int" />
+    	<addNotNullConstraint tableName="tbl_phonemodel" columnName="name" columnDataType="varchar(80)" />
+    	<addNotNullConstraint tableName="tbl_phonemodel" columnName="manufacturer_id" columnDataType="int" />
+    	
+    	<addForeignKeyConstraint constraintName="fk_phonemodel_manufacturer" 
+    		referencedTableName="tbl_manufacturer" 
+    		baseColumnNames="manufacturer_id" 
+    		baseTableName="tbl_phonemodel" 
+    		referencedColumnNames="id" />
+    </changeSet>
+    
+    <changeSet id="20151212-3" author="staleks@gmail.com">
+    	<insert tableName="tbl_manufacturer">
+    		<column name="id" valueNumeric="1" />
+    		<column name="name" value="Acer" />
+    		<column name="active" value="true" />
+    	</insert>
+    	
+    	<insert tableName="tbl_manufacturer">
+    		<column name="id" valueNumeric="2" />
+    		<column name="name" value="Alcatel" />
+    		<column name="active" value="true" />
+    	</insert>
+    	
+    	<insert tableName="tbl_manufacturer">
+    		<column name="id" valueNumeric="3" />
+    		<column name="name" value="Sony-Ericsson" />
+    		<column name="active" value="false" />
+    	</insert>
+    	
+    </changeSet>
+    
+    <changeSet id="20151212-4" author="staleks@gmail.com">
+    	<insert tableName="tbl_phonemodel">
+    		<column name="id" valueNumeric="1" />
+    		<column name="name" value="Predator 8" />
+    		<column name="active" value="true" />
+    		<column name="manufacturer_id" value="1" />
+    	</insert>
+    	
+    	<insert tableName="tbl_phonemodel">
+    		<column name="id" valueNumeric="2" />
+    		<column name="name" value="Flash 2" />
+    		<column name="active" value="true" />
+    		<column name="manufacturer_id" value="2" />
+    	</insert>
+    </changeSet>
+    
+</databaseChangeLog>
