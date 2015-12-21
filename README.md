@@ -80,6 +80,7 @@ http://localhost:8080/api/v1/manufacturers
 Response in this case is:
 ![JSON Response](/images/jersey/jersey-001.png)
 
+
 2. To get one manufacturer:
 
 ```
@@ -91,4 +92,27 @@ http://localhost:8080/api/v1/manufacturers/1
 Response in this case is:
 ![JSON Response](/images/jersey/jersey-002.png)
 
+
+3. To get all phone models:
+
+```
+
+http://localhost:8080/api/v1/phonemodels
+
+```
+
+Response in this case is:
+![JSON Response](/images/jersey/jersey-003.png)
+
+
+4. To get one phone model:
+
+```
+
+http://localhost:8080/api/v1/phonemodels/2
+
+```
+
+Response in this case is:
+![JSON Response](/images/jersey/jersey-004.png)
 
