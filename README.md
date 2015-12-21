@@ -9,7 +9,9 @@ This project is using Gradle as a build tool. In order to make deliverable, Spri
 you will need to execute following from project root folder:
 
 ```
+
 $ ./gradlew clean build
+
 ```
 
 As a result, in ${PROJECT.ROOT}/build/libs will be generated file:
@@ -34,9 +36,32 @@ ${PROJECT.ROOT}/build/libs
 and execute following:
 
 ```
+
 java -jar demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=develop
+
 ```
 
 
+## Verify DB accessabillity, H2-Console
 
+Since H2-Console is enabled (you can configure/check this in application.yml file),
+
+```
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+```
+
+![H2-Console in web browser](/images/h2-console-001.png) 
+
+Click on connect, and you will get to SQL client:
+
+![H2-Console SQL client](/images/h2-console-002.png)
+
+Check if there are manufacturers:
+
+![H2-Console in web browser](/images/h2-console-003.png)
  
