@@ -62,8 +62,18 @@ public class PhoneModelImpl extends AbstractEntity implements PhoneModel {
 	}
 
 	@Override
-	protected String[] getExcludedFields() {
-		return new String[] {};
+	public Manufacturer getManufacturer() {
+		return manufacturer;
 	}
+	
+	public void setManufacturer(Manufacturer manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+	@Override
+	protected String[] getExcludedFields() {
+		return new String[] {"manufacturer"};
+	}
+
 
 }

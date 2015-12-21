@@ -28,10 +28,10 @@ public class PhoneModelDTO implements Serializable {
 	@MappedBy(field = "active")
 	private boolean active;
 	
-	@MappedBy(field = "manufacturer", path = "id")
+	@MappedBy(field = "id", path = "manufacturer")
 	private Integer manufacturerId;
 	
-	@MappedBy(field = "manufacturer", path = "name")
+	@MappedBy(field = "name", path = "manufacturer")
 	private String manufacturerName;
 	
 	

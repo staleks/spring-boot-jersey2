@@ -46,6 +46,15 @@ public class ManufacturerImpl extends AbstractEntity implements Manufacturer {
 	public boolean isActive() {
 		return active;
 	}
+	
+	public void setId(Integer id) {
+		super.setId(id);
+	};
+	
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	@Override
 	protected String[] getExcludedFields() {

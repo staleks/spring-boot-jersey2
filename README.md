@@ -55,13 +55,40 @@ spring:
 
 ```
 
-![H2-Console in web browser](/images/h2-console-001.png) 
+![H2-Console in web browser](/images/h2-console/h2-console-001.png) 
 
 Click on connect, and you will get to SQL client:
 
-![H2-Console SQL client](/images/h2-console-002.png)
+![H2-Console SQL client](/images/h2-console/h2-console-002.png)
 
 Check if there are manufacturers:
 
-![H2-Console in web browser](/images/h2-console-003.png)
- 
+![H2-Console in web browser](/images/h2-console/h2-console-003.png)
+
+## Verify JAX-RS, Jersey Endpoints
+
+Now you can open browsers and hit following URL's:
+
+1. To get all manufacturers:
+
+```
+
+http://localhost:8080/api/v1/manufacturers
+
+```
+
+Response in this case is:
+![JSON Response](/images/jersey/jersey-001.png)
+
+2. To get one manufacturer:
+
+```
+
+http://localhost:8080/api/v1/manufacturers/1
+
+```
+
+Response in this case is:
+![JSON Response](/images/jersey/jersey-002.png)
+
+
