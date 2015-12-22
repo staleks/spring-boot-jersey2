@@ -2,8 +2,13 @@ spring:
   h2:
     console:
       enabled: true
+      
 
 liquibase:
   change-log: classpath:liquibase-changeLog.xml
   
-  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ 
+       
