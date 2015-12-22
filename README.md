@@ -16,7 +16,7 @@ $ ./gradlew clean build
 
 As a result, in ${PROJECT.ROOT}/build/libs will be generated file:
 
-demo-0.0.1-SNAPSHOT.jar
+demo-jersey2-0.0.1-SNAPSHOT.jar
 
 
 ## Starting application
@@ -37,7 +37,7 @@ and execute following:
 
 ```
 
-java -jar demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=develop
+java -jar demo-jersey2-0.0.1-SNAPSHOT.jar --spring.profiles.active=develop
 
 ```
 
